@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>DATA</th>
+            <th>MÁQUINA</th>
+            <th>PROBLEMA</th>
+            <th>SERVIÇO EXECUTADO</th>
+            <th>STATUS</th>
+        </tr>
+        <td id="cel_data"></td>
+        <td id="cel_maquina"></td>
+        <td id="cel_problema"></td>
+        <td id="cel_servico"></td>
+        <td id="cel_status"></td>
+    </table>
+    <script>
+        window.onload = function() {
+            let getData = document.getElementById("cel_data").textContent = localStorage.getItem('datakey')
+            let getMaquina = document.getElementById("cel_maquina").textContent = localStorage.getItem('maquinakey')
+            let getProblema = document.getElementById("cel_problema").textContent = localStorage.getItem('problemakey')
+            let getServico = document.getElementById("cel_servico").textContent = localStorage.getItem('servicokey')
+            let getStatus = document.getElementById("cel_status").textContent = localStorage.getItem('statuskey')
+
+        }
+    </script>
+</body>
+
+</html>

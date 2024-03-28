@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div>
+        <form>
+            <div>
+                <label for="data">DATA</label>
+                <input type="datetime-local" id="data">
+            </div>
+            <div>
+                <label for="maquina">MÁQUINA</label>
+                <select id="maquina">
+                <option>-</option>
+                <option>T-EX01</option>
+                <option>T-EX02</option>
+                <option>T-EX03</option>
+                <option>T-EX04</option>
+                <option>T-RE05</option>
+                <option>T-RE06</option>
+                <option>T-RE07</option>
+                <option>T-RE08</option>
+                <option>T-RE09</option>
+                <option>T-RE10</option>
+                <option>T-RE11</option>
+                <option>T-EX12</option>
+                <option>T-RESERVA</option>
+                <option>EMP-EX01</option>
+                <option>EMP-EX02</option>
+                <option>EMP-EX03</option>
+                <option>EMP-EX04</option>
+                <option>EMP-RE05</option>
+                <option>EMP-RE06</option>
+                <option>EMP-RE07</option>
+                <option>EMP-RE08</option>
+            </select>
+            </div>
+            <div>
+                <label for="problema">PROBLEMA</label>
+                <input id="problema">
+            </div>
+            <div>
+                <label for="servico">SERVIÇO EXECUTADO</label>
+                <textarea id="servico"></textarea>
+            </div>
+            <div>
+                <label for="status">STATUS DA MÁQUINA</label>
+                <select id="status">
+                <option>-</option>
+                <option>PARADA</option>
+                <option>LIBERADA</option>
+            </select>
+            </div>
+        </form>
+        <button id="btn_enviar" type="submit">ENVIAR</button>
+    </div>
+    <script>
+        document.getElementById("btn_enviar").addEventListener("click", function(event) {
+            RequisitarDados();
+        })
+
+        function RequisitarDados() {
+
+            let dataV = document.getElementById("data").value
+            let maquinaV = document.getElementById("maquina").value
+            let problemaV = document.getElementById("problema").value
+            let servicoV = document.getElementById("servico").value
+            let statusV = document.getElementById("status").value
+
+            localStorage.setItem('datakey', dataV)
+            localStorage.setItem('maquinakey', maquinaV)
+            localStorage.setItem('problemakey', problemaV)
+            localStorage.setItem('servicokey', servicoV)
+            localStorage.setItem('statuskey', statusV)
+
+            window.location.href = ("Tabela_rental.html")
+        }
+    </script>
+</body>
+
+</html>
